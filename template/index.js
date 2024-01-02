@@ -1,7 +1,7 @@
-import {AppRegistry, Text, TextInput} from 'react-native';
+import { AppRegistry, Text, TextInput } from 'react-native';
 import App from './src/App';
-import {enableFreeze, enableScreens} from 'react-native-screens';
-import {name as appName} from './app.json';
+import { enableFreeze, enableScreens } from 'react-native-screens';
+import { name as appName } from './app.json';
 enableScreens();
 enableFreeze();
 Text.defaultProps = Text.defaultProps || {

@@ -17,6 +17,7 @@
     "dayjs": "^1.11.10",
     "i18next": "^23.7.8",
     "react": "18.2.0",
+    "react-i18next": "^14.0.0",
     "react-native": "0.73.1",
     "react-native-gesture-handler": "^2.14.0",
     "react-native-image-picker": "^7.1.0",
