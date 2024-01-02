@@ -1,0 +1,31 @@
+{
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "types": ["jest", "node"],
+    "strictNullChecks": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "target": "esnext",
+    "baseUrl": "./src",
+    "paths": {
+      "@i18n": ["i18n"],
+      "@assets": ["assets"],
+      "@components": ["components"],
+      "@navigation": ["navigation"],
+      "@features": ["features"],
+      "@functions": ["functions"],
+      "@theme": ["theme"],
+
+      "@i18n/*": ["i18n/*"],
+      "@assets/*": ["assets/*"],
+      "@components/*": ["components/*"],
+      "@navigation/*": ["navigation/*"],
+      "@features/*": ["features/*"],
+      "@functions/*": ["functions/*"],
+      "@theme/*": ["theme/*"]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@mduc-dev/react-native-boilerplate",
+  "version": "0.0.1",
+  "description": "React Native Boilerplate",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mduc-dev/react-native-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "boilerplate",
+    "react-native",
+    "starter-kit"
+  ],
+  "author": "Duc Nguyen <ducnguyen4301@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mduc-dev/react-native-boilerplate.git/issues"
+  },
+  "homepage": "https://github.com/mduc-dev/react-native-boilerplate.git#readme"
+}

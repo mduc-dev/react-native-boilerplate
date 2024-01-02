@@ -1,0 +1,7 @@
+lane :build_apk_android do |options|
+    build_task = "assemble"
+    gradle(task: 'clean', project_dir: "android/")
+    gradle(task: build_task, build_type: "Release",flavor: "#{ENV['NODE_ENV']}", project_dir: "android/" )
+    file_path = lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+    end   
+end

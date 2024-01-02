@@ -1,0 +1,16 @@
+lane :test do
+    telegram
+  end
+  
+  lane :send_message do 
+      telegram(
+        token: "6792863649:AAF3ktbZiIaR4qyxD1QcxjcidAAHBNxPZBI",
+        # chat_id: "-1001724725567",
+        chat_id: "5574216640",
+        text: "Hello World! From Bien Hoa with love",
+        # file:'/Users/manhnguyen/Downloads/app-dev-release.apk',
+        # mime_type:'application/vnd.android.package-archive'
+        # file:'/Users/manhnguyen/Downloads/JD_REACT-NATIVE_PRU.pdf',
+        # mime_type:'application/pdf'
+      )
+  end
