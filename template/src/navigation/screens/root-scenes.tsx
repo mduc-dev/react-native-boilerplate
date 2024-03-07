@@ -5,18 +5,18 @@ import {
 } from '@navigation/config/routes';
 import { RootStackRoutes, screenOptions } from '@navigation/config/types';
 import { createStackNavigator } from '@react-navigation/stack';
-import { useTheme } from '@theme';
+import { useNetWorkConnection } from 'hooks/use-network-connection';
+import React from 'react';
 
 const { Navigator, Group, Screen } = createStackNavigator<RootStackRoutes>();
 
 export const RootScenes = () => {
-  const { Colors, Fonts } = useTheme();
-
+  useNetWorkConnection();
   const isAuth = false;
 
   return (
     <Navigator>
-      <Group>
+      <Group screenOptions={{}}>
         {Object.entries({
           ...commonScreens,
           ...(isAuth ? userScreens : notLoggedInScreens),

@@ -7,6 +7,11 @@ import { StackNavigationOptions } from '@react-navigation/stack';
 
 export type RootStackRoutes = {
   Welcome: NavigatorScreenParams<{ text: string }>;
+  BottomTab: NavigatorScreenParams<BottomTabRoutes>;
+};
+
+export type BottomTabRoutes = {
+  Home: undefined;
 };
 
 export type RouteNames = keyof RootStackRoutes;
@@ -23,4 +28,5 @@ export const screenOptions: ScreenOptions<
   StackNavigationOptions
 > = {
   Welcome: { headerShown: true },
+  BottomTab: { headerShown: false },
 };

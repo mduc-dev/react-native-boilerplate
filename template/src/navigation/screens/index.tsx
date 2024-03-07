@@ -12,7 +12,6 @@ require('dayjs/locale/en');
 const MainNavigation = () => {
   const { i18n } = useTranslation();
   const { NavigationTheme } = useTheme();
-
   return (
     <NavigationContainer ref={navigationRef} theme={NavigationTheme}>
       <StatusBar barStyle="dark-content" />

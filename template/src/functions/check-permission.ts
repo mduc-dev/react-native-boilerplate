@@ -1,3 +1,4 @@
+import { toast } from '@components/toast';
 import { Alert, Platform } from 'react-native';
 import {
   PERMISSIONS,
@@ -8,7 +9,6 @@ import {
   Permission,
   openPhotoPicker,
 } from 'react-native-permissions';
-// import Config from 'react-native-config';
 enum Setting {
   CAMERA = 'camera',
   PHOTO = 'photo',
@@ -18,11 +18,11 @@ enum Setting {
 const AlertOpenSettingContent = {
   photo: {
     title: 'Photo Permission',
-    message: `${'App'} cần quyền truy cập vào thư mục hình ảnh`,
+    message: 'App cần quyền truy cập vào thư mục hình ảnh',
   },
   camera: {
     title: 'Camera Permission',
-    message: `${'App'} cần quyền truy cập vào máy ảnh`,
+    message: 'App cần quyền truy cập vào máy ảnh',
   },
 };
 
@@ -87,13 +87,10 @@ const permitPermission = (
               if (response === RESULTS.UNAVAILABLE) {
                 if (Platform.OS === 'ios' && Number(Platform.Version) >= 14) {
                   openPhotoPicker().catch(err => {
-                    Alert.alert(
-                      `${AlertOpenSettingContent[settingKey].title}`,
-                      `${
-                        keyPermission === PERMISSIONS.IOS.PHOTO_LIBRARY
-                          ? err.message.toUpperCase()
-                          : response.toUpperCase()
-                      }`,
+                    toast.error(
+                      keyPermission === PERMISSIONS.IOS.PHOTO_LIBRARY
+                        ? err.message
+                        : response,
                     );
                   });
                 }
@@ -112,23 +109,22 @@ const permitPermission = (
 
 export function checkPhotoLibraryPermission(callback: () => void) {
   let keyPermission: Permission = null;
-  if (Platform.OS === 'ios') {
-    keyPermission = PERMISSIONS.IOS.PHOTO_LIBRARY;
-  } else {
+
+  if (Platform.OS === 'ios') keyPermission = PERMISSIONS.IOS.PHOTO_LIBRARY;
+  else
     keyPermission =
       Number(Platform.Version) >= 33
         ? PERMISSIONS.ANDROID.READ_MEDIA_IMAGES
         : PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE;
-  }
+
   permitPermission(keyPermission, callback, Setting.PHOTO);
 }
 
 export function checkCameraIsOpen(callback: () => void) {
   let keyPermission: Permission = null;
-  if (Platform.OS === 'ios') {
-    keyPermission = PERMISSIONS.IOS.CAMERA;
-  } else {
-    keyPermission = PERMISSIONS.ANDROID.CAMERA;
-  }
+
+  if (Platform.OS === 'ios') keyPermission = PERMISSIONS.IOS.CAMERA;
+  else keyPermission = PERMISSIONS.ANDROID.CAMERA;
+
   permitPermission(keyPermission, callback, Setting.CAMERA);
 }

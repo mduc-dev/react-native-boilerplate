@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-export default {
+const Layout = {
   col: {
     flexDirection: 'column',
   },
@@ -79,3 +79,5 @@ export default {
     zIndex: 10,
   },
 } as const satisfies Record<string, ViewStyle>;
+
+export default Layout;

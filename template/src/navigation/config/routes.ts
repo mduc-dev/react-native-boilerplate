@@ -1,4 +1,4 @@
-import { Welcome } from '@features';
+import { BottomTab, Welcome } from '@features';
 
 /**
  * Common screens
@@ -29,4 +29,4 @@ export const commonModalSlides = {};
 /**
  * Bottom Tab
  */
-export const bottomTabScreens = [];
+export const bottomTabScreens = [{ component: BottomTab.Home, name: 'Home' }];
