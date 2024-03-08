@@ -4,7 +4,7 @@ const path = require('path');
 const exclusionList = require('metro-config/src/defaults/exclusionList');
 const escape = require('escape-string-regexp');
 
-const package = require('../package.json');
+const package = require('./package.json');
 
 const modules = Object.keys({
   ...package.peerDependencies,
@@ -14,7 +14,6 @@ const root = path.resolve(__dirname, '..');
 
 let watchFolders = [root];
 watchFolders = watchFolders.concat([path.join(__dirname, './node_modules')]);
-watchFolders = watchFolders.concat([path.join(__dirname, '../node_modules')]);
 const defaultConfig = getDefaultConfig(__dirname);
 const config = {
   projectRoot: __dirname,
